@@ -1,0 +1,2 @@
+Ver como abrir uma pasta pelo GitBash
+Fazer exercicio pyhon para buscar meses com 31 dias

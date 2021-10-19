@@ -1,0 +1,69 @@
+-->To add a repo to the folder we want:
+
+1) Open folder with git bash
+2) git clone repo url
+
+
+
+
+-->How to branch a repo, with a branch called area:
+
+1) git checkout -b area  (it creates a new branch called area and branches to the area branch)
+
+
+--Check in which branch we are:
+
+1) git branch
+
+
+-->Aftter making the changes, we have to send the changes to github repo:
+
+1) git add .
+
+2) git status (to see changes and where they were added)
+
+3) git commit -m "area of the circle"
+
+4) git push   (as there's no new branch what will have to do is this command:)
+
+5) git push --set-upstream live
+
+
+#when you go to the repo, we can see that the branches were added and we have to make a new pull request in github to send the area branch to main
+
+
+
+-->AFTER  making changes, next day per example youshould:
+
+1) git pull
+
+2) git checkout area
+
+3) git branch
+
+4) git merge
+
+
+#to know the changes made we need to write : git log 
+
+--------------------------------
+
+For labs:
+
+
+We'll need to Fork, push, 
+
+-After it, we go to the lab folder and on the path we delete and write cmd (comand line)   #an alternative option is to open writing git bash.ink (git bash command line)
+
+-We then write jupyter notebook. We make the changes and do the lab and afterwards (the same for git bash too):
+
+and after add. , commit and pull 
+
+
+-After on github we'll have to go to github:
+
+create a new pull request and on the name we have to paste the name of the repo and write our name after
+
+
+
+
