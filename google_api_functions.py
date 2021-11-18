@@ -11,6 +11,8 @@ import pandas as pd
 import googlemaps 
 import random
 
+#global variable
+loc_list =[]
 
 #My API_Key:
 API_Key = "AIzaSyDpy1uw8_RvkLGFEGEydm1Yon_1fMPIZhM"
@@ -46,6 +48,11 @@ def get_latlog(result_list):
         
     for lat_log_values in lat_log[0].values():
         final_latlog.append(lat_log_values)
+    
+    # put the lat and lot in the list
+    loc_dict = {'lat': final_latlog[0], 'long': final_latlog[1]}
+    loc_list.append(loc_dict)
+
     return final_latlog
 
 lati_logi_info = get_latlog(result_list)
@@ -98,7 +105,7 @@ maps_df["url"] = "https://google.com/maps/place/?q=place_id:" + maps_df["place_i
 #######Now the functions for DataFrame filtering and get the values:
     
 #Read the zoomato csv with all values scraped:
-zomato_df = pd.read_csv(r"C:\Users\crocs\OneDrive - Universidade de Lisboa\Ambiente de Trabalho\Gonçalo\College&Courses\Data Analytics- IronHack\Course Data Analytics\Projects\Project3\Project3\lisbon_list_final.csv")
+zomato_df = pd.read_csv(r"lisbon_list_final.csv")
 
 
 """this function grabs both dataframes and drops the unwanted tables and any duplicate if there are any"""
@@ -135,7 +142,7 @@ def filtering_with_inputs(filtered_table):
     restaurant_choice = input("From the table you have choose the restaurant and write it here:  ")
     
     restaurant_price = filtered_table[filtered_table["name"] == restaurant_choice]
-    print(type(restaurant_price))
+    #print(type(restaurant_price))
     difference = budget - float(restaurant_price["price_per_person"])
     budget = difference
     return print("you still have:", difference)
